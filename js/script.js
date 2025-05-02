@@ -2,9 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Datos de Patologías ---
-    // (¡¡MUY IMPORTANTE!! Verifica y reemplaza los rangos de precios con datos REALES
-    // en la moneda y formato apropiados para tu clínica y mercado.)
+    // --- Datos de Patologías (SIN RANGOS DE PRECIOS) ---
     const pathologyData = {
         "apiñamiento": {
             title: "Apiñamiento Dental",
@@ -13,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
             consequences: "Dificulta la higiene, riesgo de caries/gingivitis, problemas de mordida, estética.",
             why_correct: "Facilita la limpieza, previene enfermedades, mejora función y estética.",
             treatment_focus: "Los <strong>alineadores invisibles</strong> son ideales para corregir el apiñamiento de forma discreta y eficiente.",
-            price_range: "$1800 - $4500 USD (Estimado - ¡Verificar!)", // **REEMPLAZAR**
-            duration_range: "6 - 18 meses (Estimado)", // **REEMPLAZAR SI ES NECESARIO**
+            // price_range: ELIMINADO,
+            duration_range: "6 - 18 meses (Estimado)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20apiñamiento."
         },
@@ -25,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
             consequences: "Impacto estético, posible dificultad fonética, acumulación de comida.",
             why_correct: "Mejora estética, función y previene problemas de encías.",
             treatment_focus: "Los <strong>alineadores invisibles</strong> cierran estos espacios de manera controlada y estética.",
-            price_range: "$1500 - $3500 USD (Estimado - ¡Verificar!)", // **REEMPLAZAR**
-            duration_range: "6 - 12 meses (Estimado)", // **REEMPLAZAR SI ES NECESARIO**
+            // price_range: ELIMINADO,
+            duration_range: "6 - 12 meses (Estimado)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20diastemas."
         },
@@ -37,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             consequences: "Desgaste dental anormal, problemas ATM, asimetría facial, masticación ineficiente.",
             why_correct: "Logra mordida funcional, previene desgaste y problemas articulares, mejora simetría.",
             treatment_focus: "<strong>Alineadores invisibles</strong>, a menudo con auxiliares (elásticos), pueden corregir muchos casos.",
-            price_range: "$2500 - $5500 USD (Estimado - ¡Verificar!)", // **REEMPLAZAR**
-            duration_range: "12 - 24 meses (Estimado)", // **REEMPLAZAR SI ES NECESARIO**
+            // price_range: ELIMINADO,
+            duration_range: "12 - 24 meses (Estimado)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20mordida%20cruzada."
         },
@@ -49,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
             consequences: "Desgaste incisivos inferiores, daño encía palatina, problemas ATM.",
             why_correct: "Previene desgaste, protege encías y articulación, mejora función.",
             treatment_focus: "Corrección muy efectiva con <strong>alineadores invisibles</strong>, logrando nivelación vertical.",
-            price_range: "$2000 - $5000 USD (Estimado - ¡Verificar!)", // **REEMPLAZAR**
-            duration_range: "12 - 20 meses (Estimado)", // **REEMPLAZAR SI ES NECESARIO**
+            // price_range: ELIMINADO,
+            duration_range: "12 - 20 meses (Estimado)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20sobremordida."
         },
@@ -61,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
             consequences: "Dificultad masticatoria/fonética, estética afectada.",
             why_correct: "Restaura función masticatoria/fonética, mejora estética.",
             treatment_focus: "<strong>Alineadores invisibles</strong>, a menudo junto a corrección de hábitos, pueden cerrar la mordida.",
-            price_range: "$3500 - $6500 USD (Estimado - ¡Verificar!)", // **REEMPLAZAR**
-            duration_range: "18 - 30 meses (Estimado)", // **REEMPLAZAR SI ES NECESARIO**
+            // price_range: ELIMINADO,
+            duration_range: "18 - 30 meses (Estimado)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20mordida%20abierta."
         },
@@ -73,23 +71,22 @@ document.addEventListener('DOMContentLoaded', function() {
             consequences: "Perfil facial característico, desgaste dental, dificultad masticatoria, problemas ATM.",
             why_correct: "Mejora función masticatoria, estética facial, previene problemas articulares.",
             treatment_focus: "Casos leves/moderados pueden tratarse con <strong>alineadores invisibles</strong> (a veces con auxiliares). Casos esqueléticos severos pueden requerir cirugía + ortodoncia.",
-            price_range: "$3000 - $7000+ USD (Estimado, complejo - ¡Verificar!)", // **REEMPLAZAR**
-            duration_range: "18 - 36 meses (Estimado, varía mucho)", // **REEMPLAZAR SI ES NECESARIO**
+            // price_range: ELIMINADO,
+            duration_range: "18 - 36 meses (Estimado, varía mucho)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20prognatismo."
         },
-        // ****** NUEVA ENTRADA PARA "UNKNOWN" ******
         "unknown": {
             title: "Agenda una Evaluación Personalizada",
             description: "¡No te preocupes si no estás seguro de tu tipo de mordida! La mejor forma de saber qué tratamiento es el adecuado para ti es a través de una evaluación profesional en nuestro consultorio.",
-            causes: "", // No aplica
-            consequences: "", // No aplica
+            causes: "",
+            consequences: "",
             why_correct: "Podremos realizar un diagnóstico preciso, explicarte tus opciones de tratamiento (incluyendo alineadores invisibles) y crear un plan personalizado para lograr tu sonrisa ideal.",
-            treatment_focus: "", // No aplica
-            price_range: "A determinar en consulta", // No aplica rango aquí
-            duration_range: "A determinar en consulta", // No aplica rango aquí
-            docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&", // Link Docturno general
-            whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20no%20estoy%20seguro%2Fsegura%20de%20mi%20tipo%20de%20mordida.%20Quisiera%20agendar%20una%20evaluación." // Link WhatsApp general
+            treatment_focus: "",
+            // price_range: ELIMINADO (Ya estaba "A determinar..."),
+            duration_range: "A determinar en consulta", // Se mantiene
+            docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
+            whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20no%20estoy%20seguro%2Fsegura%20de%20mi%20tipo%20de%20mordida.%20Quisiera%20agendar%20una%20evaluación."
         }
     };
 
@@ -111,28 +108,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Construir el HTML interno dinámicamente
                 let detailsHTML = `<h3>${data.title}</h3><p>${data.description}</p>`;
 
-                // Añadir detalles sólo si existen para ese tipo (evita mostrar 'Causas: ' para 'unknown')
                 if(data.causes) detailsHTML += `<p><strong>Causas frecuentes:</strong> ${data.causes}</p>`;
                 if(data.consequences) detailsHTML += `<p><strong>Por qué puede ser un problema:</strong> ${data.consequences}</p>`;
                 if(data.why_correct) detailsHTML += `<p><strong>Por qué vale la pena corregirlo:</strong> ${data.why_correct}</p>`;
                 if(data.treatment_focus) detailsHTML += `<p><strong>Nuestro enfoque con Alineadores Invisibles:</strong> ${data.treatment_focus}</p>`;
 
-                // Añadir precios y duración solo si no son "A determinar en consulta"
-                if (data.price_range !== "A determinar en consulta") {
+                // --- MODIFICADO: Mostrar sólo Duración si está disponible ---
+                if (data.duration_range && data.duration_range !== "A determinar en consulta") {
                     detailsHTML += `
                         <ul>
-                            <li><strong>Rango de Costo Estimado*:</strong> ${data.price_range}</li>
                             <li><strong>Duración Estimada del Tratamiento*:</strong> ${data.duration_range}</li>
                         </ul>
-                        <em>*El costo y duración exactos dependen de la complejidad de tu caso y se determinan en la evaluación inicial. Los precios mostrados son rangos estimados y deben ser confirmados.</em>
+                        <em>*La duración exacta depende de la complejidad de tu caso y se determina en la evaluación inicial.</em>
                     `;
-                } else {
+                } else if (data.duration_range === "A determinar en consulta") {
                      detailsHTML += `
                         <ul>
-                            <li><strong>Costo y Duración:</strong> ${data.price_range}</li>
+                            <li><strong>Duración:</strong> ${data.duration_range}</li>
                         </ul>
                      `;
+                     // No se muestra costo ni la nota de duración exacta aquí
                 }
+                // --- FIN MODIFICADO ---
+
 
                 // Añadir AMBOS botones de acción
                 detailsHTML += `
@@ -149,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Actualizar el contenedor y mostrarlo
                 detailsContainer.innerHTML = detailsHTML;
                 detailsContainer.style.display = 'block';
-                detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' }); // 'center' puede ser mejor
             }
         });
     }
