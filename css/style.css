@@ -240,9 +240,9 @@ p {
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.18);
 }
 .bite-option img { /* Estilo para los SVG */
-    width: 120px;
+    width: 200px;
     height: 120px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: var(--primary-color); /* Color del stroke del SVG */
     object-fit: contain; /* Asegura que la imagen mantenga su proporción */
 }
