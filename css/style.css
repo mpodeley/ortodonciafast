@@ -306,6 +306,11 @@ p {
 .testimonial-card blockquote::before { content: '“'; font-size: 3rem; color: var(--primary-color); opacity: 0.2; position: absolute; left: -5px; top: -15px; }
 .testimonial-author { font-weight: 700; color: var(--primary-color); text-align: right; margin-top: auto; font-size: 1rem; }
 
+/* --- Running Section --- */
+.running { background-color: var(--white-color); }
+.running h2 { margin-bottom: 30px; }
+.running p { max-width: 700px; margin: 0 auto 20px; text-align: center; }
+
 /* --- FAQ Section --- */
 .faq { background-color: var(--white-color); }
 .faq h2 { margin-bottom: 50px; }
