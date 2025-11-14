@@ -1,72 +1,71 @@
-/* css/style.css */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 :root {
-    --primary-color: #007bff; /* Azul principal (puedes cambiarlo) */
-    --secondary-color: #6c757d; /* Gris secundario */
-    --light-color: #f8f9fa; /* Gris muy claro para fondos alternos */
-    --white-color: #ffffff;
-    --dark-color: #343a40; /* Texto oscuro principal */
-    --success-color: #28a745; /* Verde para WhatsApp */
-    --text-color: #495057; /* Texto general grisáceo */
-    --border-color: #dee2e6; /* Bordes claros */
-    --font-family: 'Montserrat', sans-serif;
-    --header-height: 70px; /* Altura del header para scroll padding */
+    --primary-color: #007bff; /* Azul principal (puedes cambiarlo) */
+    --secondary-color: #6c757d; /* Gris secundario */
+    --light-color: #f8f9fa; /* Gris muy claro para fondos alternos */
+    --white-color: #ffffff;
+    --dark-color: #343a40; /* Texto oscuro principal */
+    --success-color: #28a745; /* Verde para WhatsApp */
+    --text-color: #495057; /* Texto general grisáceo */
+    --border-color: #dee2e6; /* Bordes claros */
+    --font-family: 'Montserrat', sans-serif;
+    --header-height: 70px; /* Altura del header para scroll padding */
 }
 
 /* --- Resets y Estilos Globales --- */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: var(--header-height);
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
 }
 
 body {
-    font-family: var(--font-family);
-    line-height: 1.7;
-    color: var(--text-color);
-    background-color: var(--white-color);
-    font-size: 16px; /* Base font size */
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    font-size: 16px; /* Base font size */
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Evita espacios extra debajo */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Evita espacios extra debajo */
 }
 
 ul {
-    list-style: none;
+    list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 a:hover {
-    color: #0056b3; /* Azul más oscuro */
+    color: #0056b3; /* Azul más oscuro */
 }
 
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 section {
-     padding: 80px 0; /* Espaciado vertical estándar para secciones */
+     padding: 80px 0; /* Espaciado vertical estándar para secciones */
 }
 
 h1, h2, h3 {
-    color: var(--dark-color);
-    margin-bottom: 20px;
-    line-height: 1.3;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
 h1 { font-size: 2.8rem; }
@@ -74,212 +73,253 @@ h2 { font-size: 2.2rem; text-align: center; }
 h3 { font-size: 1.6rem; }
 
 p {
-    margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 /* --- Header y Navegación --- */
 .header {
-    background-color: var(--white-color);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    height: var(--header-height);
+    background-color: var(--white-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: var(--header-height);
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 .logo {
-    font-size: 1.4rem; /* Ajustar tamaño si es texto */
-    font-weight: 700;
-    color: var(--primary-color);
+    font-size: 1.4rem; /* Ajustar tamaño si es texto */
+    font-weight: 700;
+    color: var(--primary-color);
 }
 .logo-img { /* Estilo si usas imagen para el logo */
-    height: 40px; /* Ajustar altura */
-    width: auto;
+    height: 40px; /* Ajustar altura */
+    width: auto;
 }
 
 .nav-menu {
-    display: flex;
-    gap: 30px; /* Espacio entre items del menú */
+    display: flex;
+    gap: 30px; /* Espacio entre items del menú */
 }
 
 .nav-menu a {
-    color: var(--dark-color);
-    font-weight: 500;
-    padding: 5px 0;
-    position: relative;
-    font-size: 0.95rem;
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    font-size: 0.95rem;
 }
 /* Efecto subrayado opcional */
 .nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }
 .nav-menu a:hover::after {
-    width: 100%;
+    width: 100%;
 }
+
+/* --- Estilos Menú Desplegable (Integrado) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white-color);
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 8px;
+    padding: 10px 0;
+    border: 1px solid var(--border-color); /* Ligeramente más visible */
+}
+
+.dropdown-content a {
+    color: var(--dark-color); /* Usa variable */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f0f0f0; /* Separador suave */
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-color); /* Usa variable */
+    color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Fin de estilos de menú desplegable */
 
 /* --- Botones --- */
 .btn {
-    display: inline-block;
-    padding: 12px 30px; /* Más padding */
-    border-radius: 25px; /* Bordes más redondeados */
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-    text-align: center;
+    display: inline-block;
+    padding: 12px 30px; /* Más padding */
+    border-radius: 25px; /* Bordes más redondeados */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 .btn-primary:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
 }
 
 .btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
 }
 .btn-secondary:hover {
-    background-color: #5a6268;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(90, 98, 104, 0.4);
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(90, 98, 104, 0.4);
 }
 
 .btn-whatsapp-nav, .btn-whatsapp-contact {
-    background-color: var(--success-color);
-    color: var(--white-color);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px; /* Ajustar padding para botón nav */
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+    background-color: var(--success-color);
+    color: var(--white-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px; /* Ajustar padding para botón nav */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
 }
 .btn-whatsapp-nav:hover, .btn-whatsapp-contact:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(33, 136, 56, 0.4);
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(33, 136, 56, 0.4);
 }
 .whatsapp-icon {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
 }
 
 /* --- Hero Section --- */
 .hero {
-    /* Considerar un fondo más sutil o específico de odontología */
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../img/hero-bg.jpg') no-repeat center center/cover; /* Placeholder */
-    min-height: calc(90vh - var(--header-height)); /* Ligeramente menos de pantalla completa */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--dark-color);
-    padding: 80px 0;
+    /* Considerar un fondo más sutil o específico de odontología */
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../img/hero-bg.jpg') no-repeat center center/cover; /* Placeholder */
+    min-height: calc(90vh - var(--header-height)); /* Ligeramente menos de pantalla completa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--dark-color);
+    padding: 80px 0;
 }
 .hero-content p {
-    font-size: 1.15rem;
-    margin-bottom: 40px;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--secondary-color);
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--secondary-color);
 }
 
 /* --- Evaluator Section --- */
 .evaluator {
-    background-color: var(--white-color);
+    background-color: var(--white-color);
 }
 .evaluator h2 { margin-bottom: 15px; }
 .evaluator p { color: var(--secondary-color); margin-bottom: 50px; }
 .bite-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
 }
 .bite-option {
-    background-color: var(--white-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 5px 5px; /* Padding mínimo */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 5px 5px; /* Padding mínimo */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 .bite-option:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.18);
+    border-color: var(--primary-color);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.18);
 }
 .bite-option img { /* Estilo para los SVG */
-    width: 200px;
-    height: 120px;
-    margin-bottom: 5px;
-    color: var(--primary-color); /* Color del stroke del SVG */
-    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+    width: 200px;
+    height: 120px;
+    margin-bottom: 5px;
+    color: var(--primary-color); /* Color del stroke del SVG */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
 }
 .bite-option span {
-    font-weight: 500;
-    color: var(--dark-color);
-    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    font-size: 0.95rem;
 }
 
 /* --- Details Section --- */
 .details-section {
-    margin-top: 50px;
-    padding: 35px; /* Más padding */
-    background-color: #eef7ff; /* Azul muy pálido */
-    border-radius: 10px;
-    text-align: left;
-    border: 1px solid #bde0ff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 50px;
+    padding: 35px; /* Más padding */
+    background-color: #eef7ff; /* Azul muy pálido */
+    border-radius: 10px;
+    text-align: left;
+    border: 1px solid #bde0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 .details-section h3 { color: var(--primary-color); margin-bottom: 25px; font-size: 1.8rem; }
 .details-section p, .details-section ul { margin-bottom: 18px; font-size: 1rem; }
 .details-section ul { padding-left: 20px; list-style: disc; }
 .details-section strong { color: var(--dark-color); }
 .details-section em { display: block; margin-top: 25px; font-size: 0.9rem; color: var(--secondary-color); font-style: italic; }
-.details-section .btn { 
-    margin-top: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-} 
+.details-section .btn { 
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+} 
 
 .details-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* --- Treatment Section --- */
@@ -292,10 +332,30 @@ p {
 .treatment .btn-secondary { display: block; width: fit-content; margin: 40px auto 0; }
 
 /* --- About Section --- */
- .about { background-color: var(--white-color); }
- .about h2 { margin-bottom: 40px; }
- .about-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 25px; border: 4px solid var(--primary-color); box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2); }
- .about p { max-width: 750px; margin: 0 auto 15px; text-align: center; }
+ .about { background-color: var(--white-color); }
+ .about h2 { margin-bottom: 40px; }
+ .about-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 25px; border: 4px solid var(--primary-color); box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2); }
+ .about p { max-width: 750px; margin: 0 auto 15px; text-align: center; }
+ .about h3 { text-align: center; margin-top: 2.5em; } /* Añadido para los servicios de odontología */
+ .about ul {
+    max-width: 750px;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+ }
+ .about li { /* Copiando estilo de .treatment li */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    background-color: var(--light-color); /* Un fondo más suave */
+    padding: 10px 18px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+ }
+ .about li img { width: 18px; height: 18px; }
 
 /* --- Testimonials Section --- */
 .testimonials { background-color: var(--light-color); }
@@ -325,33 +385,32 @@ p {
 .faq-answer { padding: 20px 25px 25px 25px; color: var(--text-color); background-color: var(--white-color); border-top: 1px solid var(--border-color); font-size: 0.95rem; }
 .faq-item:not([open]) .faq-answer { padding-top: 0; padding-bottom: 0; border-top: none;} /* Mejor manejo visual cerrado */
 
-
 /* --- Contact Section --- */
- .contact { background-color: var(--light-color); }
- .contact h2 { margin-bottom: 20px; }
- .contact p { max-width: 600px; margin: 0 auto 40px; text-align: center; }
- .contact-info { margin-bottom: 40px; text-align: left; max-width: 450px; margin-left: auto; margin-right: auto; }
- .contact-info p { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; font-size: 1rem; }
- .contact-info img { width: 22px; height: 22px; color: var(--primary-color); /* Color para SVGs de contacto */ flex-shrink: 0; }
- .contact-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+ .contact { background-color: var(--light-color); }
+ .contact h2 { margin-bottom: 20px; }
+ .contact p { max-width: 600px; margin: 0 auto 40px; text-align: center; }
+ .contact-info { margin-bottom: 40px; text-align: left; max-width: 450px; margin-left: auto; margin-right: auto; }
+ .contact-info p { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; font-size: 1rem; }
+ .contact-info img { width: 22px; height: 22px; color: var(--primary-color); /* Color para SVGs de contacto */ flex-shrink: 0; }
+ .contact-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contact-buttons .btn {
-    padding: 10px 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .map-widget {
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
 }
 
 /* --- Footer --- */
@@ -361,38 +420,76 @@ p {
 .social-links img { width: 26px; height: 26px; filter: invert(75%) sepia(11%) saturate(118%) hue-rotate(171deg) brightness(95%) contrast(88%); /* Filtro para color gris claro */ transition: filter 0.3s ease, transform 0.3s ease; }
 .social-links img:hover { filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(103deg) brightness(102%) contrast(102%); /* Blanco al hover */ transform: scale(1.1); }
 
+
+/* --- Estilos para Páginas de Documentos (Añadido) --- */
+.doc-content { padding: 4rem 0; }
+.doc-content h2 { margin-top: 2rem; color: #333; text-align: left; }
+.doc-content h3 { color: #555; margin-top: 1.5rem; text-align: left; }
+.doc-content ul { list-style: disc; margin-left: 20px; margin-bottom: 1rem; }
+.doc-content li { margin-bottom: 0.5rem; }
+.warning-box { background-color: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+.exercise-card { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #eee; }
+.step-list { counter-reset: step; list-style: none; padding: 0; }
+.step-list li { position: relative; padding-left: 50px; margin-bottom: 20px; text-align: left; }
+.step-list li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0;
+    width: 35px; height: 35px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+}
+.restriction-list { list-style: none; padding-left: 0; }
+.restriction-list li { margin-bottom: 10px; color: #d9534f; }
+/* --- Fin Estilos Documentos --- */
+
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.5rem; }
-    section { padding: 60px 0; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    section { padding: 60px 0; }
 }
 
 @media (max-width: 768px) {
-    .nav-menu { display: none; /* Implementar menú hamburguesa con JS si es necesario */ }
-    .btn-whatsapp-nav { margin-left: auto; /* Mueve el botón de WSP a la derecha si el menú desaparece */ }
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    .hero { min-height: auto; padding: 60px 0; }
-    .bite-options { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .testimonial-grid { grid-template-columns: 1fr; }
-    .contact-info { max-width: 90%; }
+    .nav-menu { display: none; /* Implementar menú hamburguesa con JS si es necesario */ }
+    .btn-whatsapp-nav { margin-left: auto; /* Mueve el botón de WSP a la derecha si el menú desaparece */ }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .hero { min-height: auto; padding: 60px 0; }
+    .bite-options { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .contact-info { max-width: 90%; }
+
+    /* --- Estilos Dropdown Responsive (Integrado) --- */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f5f5f5;
+        width: 100%;
+        padding-left: 20px;
+    }
 }
 
 @media (max-width: 480px) {
-    body { font-size: 15px; }
-    h1 { font-size: 1.9rem; }
-    h2 { font-size: 1.6rem; }
-    section { padding: 50px 0; }
-    .btn { padding: 10px 20px; font-size: 0.9rem; }
-    .bite-options { grid-template-columns: 1fr; gap: 15px; }
-    .bite-option { padding: 20px 15px; }
-    .bite-option img { width: 200px; height: 120px; }
-    .details-section { padding: 25px; }
-    .details-section h3 { font-size: 1.5rem; }
-    .testimonial-card { padding: 25px; }
-    .faq-question { padding: 15px 20px; }
-    .faq-answer { padding: 15px 20px 20px; }
-    .footer { padding: 30px 0; }
+    body { font-size: 15px; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.6rem; }
+    section { padding: 50px 0; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; }
+    .bite-options { grid-template-columns: 1fr; gap: 15px; }
+    .bite-option { padding: 20px 15px; }
+    .bite-option img { width: 200px; height: 120px; }
+    .details-section { padding: 25px; }
+    .details-section h3 { font-size: 1.5rem; }
+    .testimonial-card { padding: 25px; }
+    .faq-question { padding: 15px 20px; }
+    .faq-answer { padding: 15px 20px 20px; }
+  t .footer { padding: 30px 0; }
 }
