@@ -251,29 +251,30 @@ p {
 }
 
 .btn-whatsapp-nav {
-    background-color: var(--success-color); /* <-- LÍNEA AGREGADA */
-    color: var(--white-color);           /* <-- LÍNEA AGREGADA */
-    padding: 10px; /* Hacerlo cuadrado */
-    border-radius: 50%; /* Hacerlo circular */
-    width: 42px; /* Ancho fijo */
-    height: 42px; /* Alto fijo */
-    gap: 0; /* Sin espacio interno */
-    justify-content: center; /* Centrar ícono */
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+    /* Eliminamos el background-color */
+    padding: 0; /* Eliminamos el padding */
+    border-radius: 50%; 
+    width: 42px; 
+    height: 42px; 
+    gap: 0; 
+    justify-content: center; 
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); /* Mantenemos la sombra */
     display: inline-flex;
     align-items: center; 
 }
+
 .btn-whatsapp-nav:hover {
     background-color: #218838;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(33, 136, 56, 0.4);
 }
 .btn-whatsapp-nav .whatsapp-icon {
-    width: 22px; /* Ícono un poco más grande */
-    height: 22px;
-    margin: 0; /* Asegurar que no tenga márgenes */
-    vertical-align: middle;
+    width: 100%; /* La imagen ocupa todo el botón */
+    height: 100%; /* La imagen ocupa todo el botón */
+    border-radius: 50%; /* Aseguramos que la imagen también sea redonda */
+    /* Eliminamos el 'filter' */
 }
+
 
 /* Este es el botón CON TEXTO de la sección de contacto */
 .btn-whatsapp-contact {
