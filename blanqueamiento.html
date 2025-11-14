@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructivo Blanqueamiento | NomadAligners</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <style>
+        .step-list { counter-reset: step; list-style: none; padding: 0; }
+        .step-list li { position: relative; padding-left: 50px; margin-bottom: 20px; }
+        .step-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0; top: 0;
+            width: 35px; height: 35px;
+            background: var(--primary-color, #007bff); /* Ajustar color */
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+        }
+        .restriction-list li { margin-bottom: 10px; color: #d9534f; }
+    </style>
+</head>
+<body>
+     <header class="header">
+        <nav class="container nav">
+            <a href="index.html" class="logo">NomadAligners</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Pacientes ▾</a>
+                    <div class="dropdown-content">
+                        <a href="fonoaudiologia.html">Ejercicios Fonoaudiología</a>
+                        <a href="blanqueamiento.html">Instructivo Blanqueamiento</a>
+                        <a href="contenciones.html">Uso de Contenciones</a>
+                    </div>
+                </li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 40vh; padding-top: 100px;">
+            <div class="container hero-content">
+                <h1>Blanqueamiento Ambulatorio</h1>
+                <p>Instrucciones paso a paso para lograr una sonrisa brillante desde casa.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 4rem 0;">
+            <h2>Instrucciones de Uso</h2>
+            <p>El momento ideal para realizar el tratamiento es <strong>por la noche</strong>, antes de ir a dormir.</p>
+            
+            <ol class="step-list">
+                <li><strong>Preparación:</strong> Cepillate bien los dientes y secá muy bien el alineador antes de colocar el gel.</li>
+                <li><strong>Aplicación del Gel:</strong> Colocá media gota (tamaño de un grano de arroz) en la cara interna del alineador, justo en la zona frontal de cada diente que quieras blanquear.</li>
+                <li><strong>Zona de acción:</strong> Aplicalo generalmente de premolar a premolar. Evitá los molares para no generar sensibilidad innecesaria.</li>
+                <li><strong>Durante la noche:</strong> Dormí con el alineador puesto.</li>
+                <li><strong>A la mañana siguiente:</strong> Retirá el alineador, enjuagá bien tu boca y lavá el alineador con agua fría.</li>
+            </ol>
+
+            <hr>
+
+            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 10px; margin-top: 30px;">
+                <h3>⚠️ Cuidados y Sensibilidad</h3>
+                <p>Es posible sentir sensibilidad transitoria. Si es muy fuerte, interrumpí el uso por 1 o 2 días y luego retomá.</p>
+                
+                <h4>Dieta Blanca (Evitar durante el tratamiento):</h4>
+                <ul class="restriction-list">
+                    <li>🚫 Café, té, mate y vino tinto.</li>
+                    <li>🚫 Bebidas oscuras o gaseosas cola.</li>
+                    <li>🚫 Alimentos con colorantes fuertes (salsas, remolacha, etc).</li>
+                    <li>🚫 Fumar.</li>
+                </ul>
+                <p><strong>Duración:</strong> Si eres prolijo, la jeringa dura entre 5 y 7 noches.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="year"></span> OrtodonciaFast | Dra. Daniela Tkach.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
