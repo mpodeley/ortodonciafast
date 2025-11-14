@@ -35,4 +35,39 @@ document.addEventListener('DOMContentLoaded', function() {
             treatment_focus: "<strong>Alineadores invisibles</strong>, a menudo con auxiliares (elásticos), pueden corregir muchos casos.",
             duration_range: "12 - 24 meses (Estimado)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
-            whatsapp_link: "
+            whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20mordida%20cruzada."
+        }
+    };
+    // NOTA: El archivo original que subiste se corta aquí. 
+    // Si tenías más código después de "mordida_cruzada", deberías agregarlo aquí,
+    // antes del código nuevo del menú móvil.
+    
+});
+
+
+/* === CÓDIGO PARA EL MENÚ MÓVIL (HAMBURGUESA) === */
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        // Alterna la clase 'active' en el botón y el menú
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Opcional: Cierra el menú cuando se hace clic en un enlace
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
+/* === CÓDIGO PARA EL AÑO EN EL FOOTER === */
+// Este código actualizará automáticamente el año en el footer.
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
