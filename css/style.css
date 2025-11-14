@@ -251,6 +251,8 @@ p {
 }
 
 .btn-whatsapp-nav {
+    background-color: var(--success-color); /* <-- LÍNEA AGREGADA */
+    color: var(--white-color);           /* <-- LÍNEA AGREGADA */
     padding: 10px; /* Hacerlo cuadrado */
     border-radius: 50%; /* Hacerlo circular */
     width: 42px; /* Ancho fijo */
@@ -258,7 +260,6 @@ p {
     gap: 0; /* Sin espacio interno */
     justify-content: center; /* Centrar ícono */
     box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
-    /* Mantener alineación flex por .btn */
     display: inline-flex;
     align-items: center; 
 }
