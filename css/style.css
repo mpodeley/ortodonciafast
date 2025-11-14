@@ -105,9 +105,58 @@ p {
     width: auto;
 }
 
+/* Estilos del botón hamburguesa (siempre visible) */
+.hamburger {
+    display: block; /* Siempre visible */
+    cursor: pointer;
+    z-index: 1001; /* Por encima del menú */
+}
+
+/* Animación del botón al abrirse */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--dark-color);
+}
+
+
+/* Estilo del menú desplegable (siempre menú móvil) */
 .nav-menu {
-    display: flex;
-    gap: 30px; /* Espacio entre items del menú */
+    display: flex; /* Para que los <li> internos se comporten bien */
+    position: fixed;
+    left: -100%; /* Oculto a la izquierda */
+    top: var(--header-height); /* Debajo del header */
+    flex-direction: column;
+    background-color: var(--white-color);
+    width: 100%;
+    height: calc(100vh - var(--header-height)); /* Alto completo */
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    gap: 0;
+    overflow-y: auto; /* Para scroll si hay muchos items */
+}
+
+.nav-menu.active {
+    left: 0; /* Mostrar menú */
+}
+
+.nav-menu li {
+    margin: 16px 0;
 }
 
 .nav-menu a {
@@ -131,6 +180,40 @@ p {
 .nav-menu a:hover::after {
     width: 100%;
 }
+
+/* === INICIO CAMBIOS DROPDOWN Y WHATSAPP === */
+
+/* Ajuste Dropdown en Menú (Request 1) */
+.nav-menu .dropdown {
+    /* El <li> que contiene el dropdown */
+    margin: 0; /* Resetear margen de li para que .dropbtn quede alineado */
+}
+.nav-menu .dropdown-content {
+    /* El contenedor de los sub-enlaces */
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f5f9; /* Fondo gris muy claro para jerarquía */
+    margin: 8px 30px 0 30px; /* Margen arriba y a los lados (indentación) */
+    border-radius: 8px;
+    padding: 5px 0;
+}
+.nav-menu .dropdown-content a {
+    /* Los sub-enlaces */
+    padding: 10px 20px; /* Padding normal */
+    font-size: 0.9rem; /* Letra un poco más chica */
+    font-weight: 400; /* Menos peso */
+    color: #555; /* Color más suave */
+}
+.nav-menu .dropdown-content a:hover {
+     background-color: #e2e8f0;
+}
+/* Ocultar el efecto de línea de los sub-items */
+.nav-menu .dropdown-content a::after {
+    display: none;
+}
+
+/* === FIN CAMBIOS DROPDOWN Y WHATSAPP === */
+
 
 /* --- Botones --- */
 .btn {
@@ -167,25 +250,52 @@ p {
     box-shadow: 0 6px 12px rgba(90, 98, 104, 0.4);
 }
 
-.btn-whatsapp-nav, .btn-whatsapp-contact {
+.btn-whatsapp-nav {
+    padding: 10px; /* Hacerlo cuadrado */
+    border-radius: 50%; /* Hacerlo circular */
+    width: 42px; /* Ancho fijo */
+    height: 42px; /* Alto fijo */
+    gap: 0; /* Sin espacio interno */
+    justify-content: center; /* Centrar ícono */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+    /* Mantener alineación flex por .btn */
+    display: inline-flex;
+    align-items: center; 
+}
+.btn-whatsapp-nav:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(33, 136, 56, 0.4);
+}
+.btn-whatsapp-nav .whatsapp-icon {
+    width: 22px; /* Ícono un poco más grande */
+    height: 22px;
+    margin: 0; /* Asegurar que no tenga márgenes */
+    vertical-align: middle;
+}
+
+/* Este es el botón CON TEXTO de la sección de contacto */
+.btn-whatsapp-contact {
     background-color: var(--success-color);
     color: var(--white-color);
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px; /* Ajustar padding para botón nav */
+    padding: 10px 20px; 
     box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
 }
-.btn-whatsapp-nav:hover, .btn-whatsapp-contact:hover {
+.btn-whatsapp-contact:hover {
     background-color: #218838;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(33, 136, 56, 0.4);
 }
-.whatsapp-icon {
-    width: 18px;
+/* El ícono dentro del botón de contacto */
+.btn-whatsapp-contact .whatsapp-icon {
+     width: 18px;
     height: 18px;
     vertical-align: middle;
 }
+
 
 /* --- Hero Section --- */
 .hero {
@@ -393,21 +503,7 @@ p {
 
 
 /* --- INICIO: Responsive Design y Menú Móvil --- */
-
-/* Estilos del botón hamburguesa (oculto en escritorio) */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: var(--dark-color);
-}
+/* Los estilos del menú móvil se han movido a la sección principal de Navegación */
 
 
 @media (max-width: 992px) {
@@ -418,52 +514,8 @@ p {
 }
 
 @media (max-width: 768px) {
-    /* Mostrar botón hamburguesa */
-    .hamburger {
-        display: block;
-        z-index: 1001; /* Por encima del menú */
-    }
-
-    /* Animación del botón al abrirse */
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Estilo del menú desplegable */
-    .nav-menu {
-        position: fixed;
-        left: -100%; /* Oculto a la izquierda */
-        top: var(--header-height); /* Debajo del header */
-        flex-direction: column;
-        background-color: var(--white-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-        padding: 20px 0;
-        gap: 0;
-    }
-
-    .nav-menu.active {
-        left: 0; /* Mostrar menú */
-    }
-
-    .nav-menu li {
-        margin: 16px 0;
-    }
+    /* Estilos de Hamburguesa y Nav-menu movidos a la base */
     
-    /* Botón de whatsapp en el menú móvil */
-    .btn-whatsapp-nav {
-         /* Mueve el botón de WSP a la derecha si el menú desaparece */
-        /* Eliminamos el 'margin-left: auto' para que quede junto a la hamburguesa */
-    }
-
     /* Ajustes generales móvil */
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
