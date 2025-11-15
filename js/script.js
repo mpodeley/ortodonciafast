@@ -1,8 +1,6 @@
-// js/script.js
-
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Datos de Patologías (SIN RANGOS DE PRECIOS) ---
+    // --- 1. DATOS DE PATOLOGÍAS ---
     const pathologyData = {
         "apiñamiento": {
             title: "Apiñamiento Dental",
@@ -37,37 +35,90 @@ document.addEventListener('DOMContentLoaded', function() {
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20mordida%20cruzada."
         }
+        // NOTA: Tu archivo original solo tenía estas 3 patologías.
+        // Si tenías más (sobremordida, etc.), deberías agregarlas aquí
+        // siguiendo el mismo formato.
     };
-    // NOTA: El archivo original que subiste se corta aquí. 
-    // Si tenías más código después de "mordida_cruzada", deberías agregarlo aquí,
-    // antes del código nuevo del menú móvil.
-    
-});
 
+    // --- 2. LÓGICA DEL EVALUADOR (EL CÓDIGO QUE FALTABA) ---
+    const options = document.querySelectorAll('.bite-option');
+    const detailsContainer = document.getElementById('details');
 
-/* === CÓDIGO PARA EL MENÚ MÓVIL (HAMBURGUESA) === */
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+    if (options.length > 0 && detailsContainer) {
+        options.forEach(option => {
+            option.addEventListener('click', function() {
+                const pathologyKey = this.dataset.pathology;
+                const data = pathologyData[pathologyKey]; // Busca la data
 
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        // Alterna la clase 'active' en el botón y el menú
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Opcional: Cierra el menú cuando se hace clic en un enlace
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+                if (data) {
+                    // Si encuentra data, construye el HTML
+                    detailsContainer.innerHTML = `
+                        <h3>${data.title}</h3>
+                        <p><strong>Descripción:</strong> ${data.description}</p>
+                        <p><strong>Causas Comunes:</strong> ${data.causes}</p>
+                        <p><strong>Consecuencias:</strong> ${data.consequences}</p>
+                        <p><strong>Por qué Corregirlo:</strong> ${data.why_correct}</p>
+                        <p>${data.treatment_focus}</p>
+                        <em>Duración estimada del tratamiento: ${data.duration_range}</em>
+                        <div class="details-buttons">
+                            <a href="${data.whatsapp_link}" target="_blank" class="btn btn-primary btn-whatsapp-contact">
+                                <img src="img/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"> Consultar por este caso
+                            </a>
+                            <a href="${data.docturno_link}" target="_blank" class="btn btn-secondary">Agendar Turno</a>
+                        </div>
+                    `;
+                    detailsContainer.style.display = 'block';
+                } else if (pathologyKey === "unknown") {
+                    // Manejo especial para el botón "No sé / Otro"
+                    detailsContainer.innerHTML = `
+                        <h3>No te preocupes</h3>
+                        <p>Es muy común no estar seguro. Nuestros especialistas pueden identificar tu caso con una simple evaluación.</p>
+                        <p>Podemos evaluar tu caso específico y darte un plan de tratamiento digital personalizado.</p>
+                        <div class="details-buttons">
+                            <a href="https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20no%20estoy%20seguro%20de%20mi%20caso%2C%20%C2%BFpuedo%20enviarles%20una%20foto?" target="_blank" class="btn btn-primary btn-whatsapp-contact">
+                                <img src="img/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"> Enviar mi foto por WhatsApp
+                            </a>
+                            <a href="https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&" target="_blank" class="btn btn-secondary">Agendar Evaluación</a>
+                        </div>
+                    `;
+                    detailsContainer.style.display = 'block';
+                } else {
+                    // Si se clickea uno sin data (ej. "sobremordida" que no está en tu objeto), oculta
+                    detailsContainer.style.display = 'none';
+                }
+                
+                // Scroll suave hacia el detalle
+                if(detailsContainer.style.display === 'block') {
+                   detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
-    });
-}
+    }
 
-/* === CÓDIGO PARA EL AÑO EN EL FOOTER === */
-// Este código actualizará automáticamente el año en el footer.
-const yearSpan = document.getElementById('year');
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}
+    // --- 3. CÓDIGO PARA EL MENÚ MÓVIL (HAMBURGUESA) ---
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            if (!link.classList.contains('dropbtn')) {
+                 link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            }
+        });
+    }
+
+    // --- 4. CÓDIGO PARA EL AÑO EN EL FOOTER ---
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+}); // <-- FIN DEL DOMContentLoaded
