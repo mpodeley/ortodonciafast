@@ -250,30 +250,29 @@ p {
     box-shadow: 0 6px 12px rgba(90, 98, 104, 0.4);
 }
 
+/* 1. El botón (crea el círculo verde) */
 .btn-whatsapp-nav {
-    /* Eliminamos el background-color */
-    padding: 0; /* Eliminamos el padding */
+    background-color: var(--success-color) !important; /* Fondo verde (FORZADO) */
+    color: var(--white-color) !important; /* Color para el ícono (FORZADO) */
+    padding: 0; 
     border-radius: 50%; 
     width: 42px; 
     height: 42px; 
     gap: 0; 
-    justify-content: center; 
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); /* Mantenemos la sombra */
+    justify-content: center; /* Centrar SVG horizontalmente */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
     display: inline-flex;
-    align-items: center; 
+    align-items: center; /* Centrar SVG verticalmente */
+    border: none !important; /* FORZAMOS que no tenga borde */
 }
 
-.btn-whatsapp-nav:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(33, 136, 56, 0.4);
-}
+/* 2. El ícono (el SVG incrustado) */
 .btn-whatsapp-nav .whatsapp-icon {
-    width: 100%; /* La imagen ocupa todo el botón */
-    height: 100%; /* La imagen ocupa todo el botón */
-    border-radius: 50%; /* Aseguramos que la imagen también sea redonda */
-    /* Eliminamos el 'filter' */
+    width: 22px;  /* Tamaño del ícono */
+    height: 22px; /* Tamaño del ícono */
+    fill: currentColor; /* Pinta el SVG del color del padre (blanco) */
 }
+
 
 
 /* Este es el botón CON TEXTO de la sección de contacto */
