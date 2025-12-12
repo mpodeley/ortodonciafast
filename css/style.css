@@ -542,3 +542,37 @@ p {
     .faq-answer { padding: 15px 20px 20px; }
     .footer { padding: 30px 0; }
 }
+.promo-box {
+    background-color: #f8f9fa; /* Fondo gris muy suave */
+    border: 2px solid var(--primary-color); /* Borde azul */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+    text-align: center;
+}
+
+.price-highlight {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.price-highlight strong {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.financing-text {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.bonus-text {
+    font-size: 1.1rem;
+    color: var(--success-color); /* Verde para resaltar el regalo */
+    font-weight: 500;
+    margin-bottom: 0;
+}
