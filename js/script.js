@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 1. DATOS DE PATOLOGÍAS ---
+// --- 1. DATOS DE PATOLOGÍAS ---
     const pathologyData = {
         "apiñamiento": {
             title: "Apiñamiento Dental",
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20diastemas."
         },
-         "mordida_cruzada": {
+        "mordida_cruzada": {
             title: "Mordida Cruzada",
             description: "Uno o más dientes superiores muerden por dentro de los inferiores.",
             causes: "Genética, desarrollo desigual maxilares, hábitos.",
@@ -34,10 +34,40 @@ document.addEventListener('DOMContentLoaded', function() {
             duration_range: "12 - 24 meses (Estimado)",
             docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
             whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20mordida%20cruzada."
+        },
+        "sobremordida": {
+            title: "Sobremordida Aumentada",
+            description: "Los dientes superiores cubren excesivamente a los inferiores al morder.",
+            causes: "Genética, hábitos orales, desarrollo óseo.",
+            consequences: "Desgaste de dientes inferiores, problemas en encías, dolor mandibular.",
+            why_correct: "Evita el desgaste prematuro y mejora la funcionalidad de la mandíbula.",
+            treatment_focus: "Con <strong>alineadores</strong> podemos intruir dientes y corregir la posición mandibular.",
+            duration_range: "12 - 20 meses (Estimado)",
+            docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
+            whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20sobremordida."
+        },
+        "mordida_abierta": {
+            title: "Mordida Abierta",
+            description: "Los dientes superiores e inferiores no se tocan al cerrar la boca (generalmente al frente).",
+            causes: "Uso prolongado de chupete, chuparse el dedo, empuje lingual.",
+            consequences: "Dificultad para morder y hablar, desgaste en dientes posteriores.",
+            why_correct: "Restaura la función masticatoria y mejora la estética de la sonrisa.",
+            treatment_focus: "El tratamiento con <strong>alineadores</strong> es muy efectivo para cerrar mordidas abiertas anteriores.",
+            duration_range: "12 - 24 meses (Estimado)",
+            docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
+            whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20mordida%20abierta."
+        },
+        "prognatismo": {
+            title: "Prognatismo (Clase III)",
+            description: "La mandíbula inferior se proyecta hacia adelante más que la superior.",
+            causes: "Principalmente genético y de desarrollo óseo.",
+            consequences: "Problemas para masticar, dolor articular (ATM), perfil facial cóncavo.",
+            why_correct: "Mejora significativamente el perfil y la salud articular a largo plazo.",
+            treatment_focus: "Casos leves o moderados pueden camuflarse con <strong>alineadores</strong>; casos severos pueden requerir cirugía.",
+            duration_range: "18 - 24+ meses (Estimado)",
+            docturno_link: "https://paciente.docturno.com/agenda/ortodonciafast/tkach-daniela?originType=clinic-page&",
+            whatsapp_link: "https://wa.me/5491128892043?text=Hola%2C%20vi%20la%20página%20y%20me%20interesa%20consultar%20sobre%20tratamiento%20para%20prognatismo."
         }
-        // NOTA: Tu archivo original solo tenía estas 3 patologías.
-        // Si tenías más (sobremordida, etc.), deberías agregarlas aquí
-        // siguiendo el mismo formato.
     };
 
     // --- 2. LÓGICA DEL EVALUADOR (EL CÓDIGO QUE FALTABA) ---
